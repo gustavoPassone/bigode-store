@@ -1,15 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&display=swap');
 
+:root {
+    --color_white: #fff;
+    --color-gray-100: #181818;
+    --color-gray-300: #323232;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Inter", sans-serif;
+    font-family: "Lexend", sans-serif;
     text-decoration: none;
 }
 
-.navbar, .home{
+.navbar,
+.home,
+.why-us,
+.games-genre {
     max-width: 1280px;
+    margin: auto;
+}
+
+section {
+    padding: 60px 0px;
+    max-width: 1096px;
     margin: auto;
 }
 
@@ -35,7 +50,7 @@ header {
             }
 
             & a:first-child {
-                color: white;
+                color: var(--color_white);
             }
         }
 
@@ -48,13 +63,13 @@ header {
                 border-radius: 8px;
                 border: none;
                 background-color: #3B44F6;
-                color: white;
+                color: var(--color_white);
                 cursor: pointer;
             }
 
             & button:last-child {
                 background-color: transparent;
-                border: white 1px solid;
+                border: var(--color_white) 1px solid;
             }
         }
     }
@@ -65,7 +80,7 @@ header {
 
         & .title {
             margin-bottom: 64px;
-            color: white;
+            color: var(--color_white);
 
             & h1 {
                 font-size: 48px;
@@ -83,9 +98,89 @@ header {
             border-radius: 8px;
             border: none;
             background-color: #3B44F6;
-            color: white;
+            color: var(--color_white);
             cursor: pointer;
             font-size: 18px;
+        }
+    }
+}
+
+main {
+    & .why-us {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;  
+
+        & .title {
+            & h2 {
+                margin-bottom: 16px;
+            }
+        }
+
+        & .title, .cards {
+            margin: auto;
+            text-align: center;
+        }
+
+        & .cards {
+            display: flex;
+            gap: 83px;
+        }
+    }
+
+    & .games-genre {
+        & .title {
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+        }
+
+        & .cards {
+            display: flex;
+            gap: 16px;
+            margin-top: 24px;
+
+            & .card {
+                position: relative;
+                width: 199px;
+                height: 199px;
+                border-radius: 8px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+
+                filter: saturate();
+
+                & p {
+                    position: absolute;
+                    color: var(--color_white);
+                    /* display: flex;
+                    align-items: center;
+                    justify-content: center; */
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            & .card:nth-child(1) {
+                background-image: url(../img/games-genre/strategy.svg);
+            }
+            & .card:nth-child(2) {
+                background-image: url(../img/games-genre/fps.svg);
+            }
+            & .card:nth-child(3) {
+                background-image: url(../img/games-genre/rpg.svg);
+            }
+            & .card:nth-child(4) {
+                background-image: url(../img/games-genre/puzzle.svg);
+            }
+            & .card:nth-child(5) {
+                background-image: url(../img/games-genre/role-playing.svg);
+            }
+            & .card:nth-child(6) {
+                background-image: url(../img/games-genre/sports.svg);
+            }
         }
     }
 }
